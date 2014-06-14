@@ -19,4 +19,7 @@ job {
     steps {
         maven("test -B -Dproject.name=testclinic")
     }
+    publishers {
+      archiveJunit("target/surefire-reports/*.xml", true, false, true)
+    }
 }
