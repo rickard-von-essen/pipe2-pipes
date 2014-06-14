@@ -4,6 +4,10 @@ project = env['project']
 git_url = env['git_url']
 branch = env['branch']
 
+env.each {
+  println it
+}
+
 job {
     name "build-${project}"
     scm {
