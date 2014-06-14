@@ -17,7 +17,7 @@ job {
         maven("clean install -B -DskipTests=true -Dproject.name=${project}")
     }
     publishers {
-      downstream("test-testclinic", "SUCCESS")
+      downstream("test-${project}", "SUCCESS")
     }
 }
 
