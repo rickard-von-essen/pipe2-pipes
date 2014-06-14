@@ -4,7 +4,7 @@ job {
         git("https://github.com/Diabol/spring-petclinic.git", "origin/master")
     }
     steps {
-        maven("install -DskipTest -Dproject.name=testclinic")
+        maven("install -B -DskipTest -Dproject.name=testclinic")
     }
     publishers {
       downstream("test-testclinic", "SUCCESS")
@@ -17,6 +17,6 @@ job {
         git("https://github.com/Diabol/spring-petclinic.git", "origin/master")
     }
     steps {
-        maven("test -Dproject.name=testclinic")
+        maven("test -B -Dproject.name=testclinic")
     }
 }
