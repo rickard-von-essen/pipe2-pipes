@@ -1,9 +1,22 @@
 job {
-    name "build-app"
+    name "build-testclinic"
     scm {
-        git("", "origin")
+        git("https://github.com/Diabol/spring-petclinic.git", "origin")
     }
     steps {
-        maven("test -Dproject.name=")
+        maven("install -DskipTest -Dproject.name=testclinic")
+    }
+    publishers {
+      downstream("test-testclinic", "")
+    }
+}
+
+job {
+    name "test-testclinic"
+    scm {
+        git("https://github.com/Diabol/spring-petclinic.git", "origin")
+    }
+    steps {
+        maven("test -Dproject.name=testclinic")
     }
 }
