@@ -7,7 +7,7 @@ job {
         maven("install -DskipTest -Dproject.name=testclinic")
     }
     publishers {
-      downstream("test-testclinic", "")
+      downstream("test-testclinic", "SUCCESS")
     }
 }
 
