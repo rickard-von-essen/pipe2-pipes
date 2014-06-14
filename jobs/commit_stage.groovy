@@ -1,7 +1,7 @@
 job {
     name "build-testclinic"
     scm {
-        git("https://github.com/Diabol/spring-petclinic.git", "origin")
+        git("https://github.com/Diabol/spring-petclinic.git", "origin/master")
     }
     steps {
         maven("install -DskipTest -Dproject.name=testclinic")
@@ -14,7 +14,7 @@ job {
 job {
     name "test-testclinic"
     scm {
-        git("https://github.com/Diabol/spring-petclinic.git", "origin")
+        git("https://github.com/Diabol/spring-petclinic.git", "origin/master")
     }
     steps {
         maven("test -Dproject.name=testclinic")
